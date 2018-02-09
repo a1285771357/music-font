@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <lable for="name">name</lable>
+    <input type="text" id="name"><br>
+    <lable for="password">password</lable>
+    <input type="text" id="password"><br>
+    <button id="btn">请求数据</button>
+<script>
+    $('#btn').on('click',function () {
+        // $.get(
+        // 'http://192.168.130.236:3001/?name='+$('#name').val()+'&password='+$('#password').val(),
+        // function (result) {alert(1)
+        //         if (result.err){
+        //             alert(result.err)
+        //         }else if(result.name){
+        //             alert("欢迎"+result.name)
+        //         }else{
+        //             alert("成功但没有数据")
+        //             console.log(result)
+        //         }
+        //     }
+        // )
+        $.get('http://192.168.130.236:3001/',{name:$('#name').val(),password:$('#password').val()},function (result) {
+            if (result.err){
+                console.log(result.err)
+            }else if(result.name){
+                console.log(result.name)
+            }else{
+                console.log(result)
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

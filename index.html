@@ -12,6 +12,7 @@
     <input type="text" id="password"><br>
     <button id="btn">请求数据</button>
 <script>
+    //自己写的不是工具生成的
     $('#btn').on('click',function () {
         // $.get(
         // 'http://192.168.130.236:3001/?name='+$('#name').val()+'&password='+$('#password').val(),
@@ -26,7 +27,7 @@
         //         }
         //     }
         // )
-        $.get('http://192.168.130.236:3001/',{name:$('#name').val(),password:$('#password').val()},function (result) {
+        $.get('http://192.168.130.250:3001/',{name:$('#name').val(),password:$('#password').val()},function (result) {
             if (result.err){
                 console.log(result.err)
             }else if(result.name){

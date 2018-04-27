@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import { connect } from 'dva';
 import {Tabs,Form, Input, Icon, Button} from 'antd';
-import styles from './IndexPage.css';
+import indexPage from "../models/indexPage";
+// import styles from './IndexPage.css';
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
 //链接model，对应namespace
 @connect(state => ({
-  indexPage: state.products,
+  indexPage: state.indexPage,
 }))
 
 class IndexPage extends Component{
-  handleSubmit = (state) =>{console.log(this.props)
+  handleSubmit = (state) =>{
     this.props.form.validateFields({ force: true },
       (err, values) => {
         if (!err) {
@@ -21,7 +22,7 @@ class IndexPage extends Component{
               name : values.userName,
               password : values.passWord
             }
-          });
+          });console.log(indexPage)
         }
       }
     );

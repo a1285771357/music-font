@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -11,9 +10,14 @@
     <lable for="password">password</lable>
     <input type="text" id="password"><br>
     <button id="btn">请求数据</button>
+    <audio controls="controls">
+        <source src="http://192.168.130.158:3001/serchfile" type="audio/mpeg" />
+        Your browser does not support this audio format.
+    </audio>
 <script>
     //自己写的不是工具生成的
     $('#btn').on('click',function () {
+        $.get('http://192.168.130.158:3001/serchfile')
         // $.get(
         // 'http://192.168.130.236:3001/?name='+$('#name').val()+'&password='+$('#password').val(),
         // function (result) {alert(1)
@@ -27,15 +31,15 @@
         //         }
         //     }
         // )
-        $.get('http://192.168.130.250:3001/',{name:$('#name').val(),password:$('#password').val()},function (result) {
-            if (result.err){
-                console.log(result.err)
-            }else if(result.name){
-                console.log(result.name)
-            }else{
-                console.log(result)
-            }
-        })
+        // $.get('http://192.168.130.250:3001/',{name:$('#name').val(),password:$('#password').val()},function (result) {
+        //     if (result.err){
+        //         console.log(result.err)
+        //     }else if(result.name){
+        //         console.log(result.name)
+        //     }else{
+        //         console.log(result)
+        //     }
+        // })
     })
 
 </script>
